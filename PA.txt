@@ -1,0 +1,12 @@
+szpiral matrix
+matrix
+sum or coloum
+palindrome 
+panagram
+time span
+date
+ractangualer
+actor
+
+
+

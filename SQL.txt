@@ -1,0 +1,161 @@
+==> table ,row ,column and indexes so find easily
+==>sql domain specific language inicially developed by ibm
+==>
+1.sql lets you access any data with
+2.clind server language
+==> ddl change the structure the table(auto commited)
+==>dml used to modify the database(not auto commited)
+select(dql)
+==> DCL control acess the data within database,create object related to object access and also control the distribution privilages among the user.
+==>manage transaction in database
+
+==> select column1,column2,
+from table name
+where condition 1,condition 2((filter table based on column name)
+group by column1,column2
+having condition 1,condition 2(filter table based on group)
+order by col 1,col 2.
+==> data type
+==> operators
+==> minimul super key called super key(NO repitation of attribute)
+==> primary unique,naver changed or rarely changed not null
+==> unique key unique but contains null value
+==> composit key more than onee attribute 
+forign key(referential integrity) more than one table
+
+==> structure describe tableName;
+==>create database databaseName;
+==> insert into tableName
+values();
+==>distinct unique city name;
+==>select count(Name) from emp_all; //count all employee
+==>in operator for multiply condition
+==> to print the range we use bbetween
+==> group by groups rows that have the same values into summary rows;
+==> inbuild function addition substraction
+
+show databases;
+use mysql;
+show tables;
+create database sql_intro;
+show databases;
+create table emp_deatails(Name varchar(25),age int,sex char(1),
+doj date,city varchar(15),salary float);
+show databases;
+create table emp_deatails(Name varchar(25),age int,sex char(1),
+doj date,city varchar(15),salary float);
+create table emp_all(Name varchar(25),age int, sex char(1),
+doj date,city varchar(15),salary float);
+describe emp_all;
+insert into emp_all
+values("Kartik",21,"M","2023-08-20","bengaluru",70000),
+("hn",22,"M","2024-08-25","kolkata",24500),
+("harry",25,"M","2024-03-12","pune",70000),
+("srija",19,"F","2023-09-24","hydrabad",56000);
+select * from emp_all;
+select distinct city from emp_all;
+select count(Name) from emp_all;
+select count(Name) as count_name from emp_all;
+select sum(salary) from emp_all;
+select avg(salary) from emp_all;
+select Name,age,sex from emp_all;
+select * from emp_all where age>24;
+select Name,sex,city from emp_all where sex='F';
+select Name,sex,city from emp_all where sex="F";
+select * from emp_all where
+city='bengaluru' or city='hydrabad';
+select * from emp_all where
+city in('hydrabad','bengaluru','kolkata');
+select * from emp_all where
+doj between '2023-08-20' and '2023-09-24';
+select * from emp_all where
+age>20 and sex='M';
+insert into emp_all
+values("likolina",21,"M","2023-08-20","bengaluru",70000);
+select * from emp_all;
+select sex, sum(salary) as total_sum from emp_all
+group by sex;
+select * from emp_all order by salary;
+select * from emp_all order by salary desc;
+select (10+20) as addition;
+select (20-10)as subtraction;
+select length('India') as total_len;
+select repeat('@',20);
+select upper('India') as Name;
+select lower('INDIA');
+select curdate();
+select day(curdate());
+# current date and time
+select now();
+# string function
+# lcase also lower case
+select lcase('INDIA') as lower_case;
+# length
+select character_length('INDIA') as total_length;
+select  Name,character_length(Name) as employee_name 
+from emp_all;
+select concat("I"," LOVE"," MY "," INDIA");
+select Name,age,concat(Name," ",salary)
+from emp_all;
+select reverse("India");
+select Name,reverse(Name)from emp_all;
+select replace("mango is a vagetable","vagetable","fruit");
+# delete left space from left(leading) r(trail)
+select length("      INDIA     ");
+select length(ltrim("      INDIA     "));
+select length(rtrim("      INDIA     "));
+select length(trim("      INDIA     "));
+# possition first occerence
+select position("fruit" in "orange is a fruit") as name;
+# ascii
+select ascii('a');
+select ascii(4);
+#group by and having
+show databases;
+create database new;show databases;
+use new;
+create table sales(product_id int, sale_price float,quantity int,city varchar(20));
+describe table sales;
+insert into sales
+values(121,320.0,3,"bengaluru"),
+(121,320.0,6,"pune"),
+(121,320.0,4,"himachal"),
+(123,290.0,2,"pune"),
+(123,290.0,7,"bengaluru"),
+(123,290.0,4,"hydrabad"),
+(121,320.0,7,"kolkata"),
+(121,320.0,2,"haryana"),
+(123,290.0,8,"chainnai");
+select * from sales;
+select product_id,sum(sale_price*quantity) as revenue from sales
+group by product_id;
+create table c_product(product_id int,cost_price float);
+insert into c_product
+values(121,270.0),
+(123,250.0);
+select * from c_product;
+select c.product_id,sum((s.sele_price-c.cost_price)* s.quantity) as profit
+from sales as s inner join c_product as c
+where s.product_id=c.product_id
+group by c.product_id;
+
+==>A HAVING clause is like a WHERE clause, but applies only to groups as a whole (that is, to the rows in the result set representing groups), whereas the WHERE clause applies to individual rows.
+
+==> SQL_JOIN:-sql join statement is used to combine rows of data from two or more tables based on common column(field) between them.
+
+//3 table join 
+select o.orderNumber,o.status,op.productName,
+sum(quantityOrder * price) as revenue from order as o
+inner join orderDetails as od on o.number=od.orderNumber inner join 
+product as p on p.product code=od.orderNumber grouped by orderNumber;
+
+
+
+
+
+
+
+
+
+
+

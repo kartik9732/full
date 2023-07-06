@@ -1,0 +1,17 @@
+TYPE SCRIPT=>
+TS is an enhanced version of java script.
+. can not run directly.
+.ts convert code in java script.
+.check error in compile time.
+.we can add object oriented language.
+DATA TYPE=>
+1.number(1,100,2.4);
+2.String();
+3.Boolean(true,false);
+
+tsc.cmd filename.ts
+node filename.js
+
+tsc filename.ts
+node filename.js
+

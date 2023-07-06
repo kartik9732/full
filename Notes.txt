@@ -1,0 +1,201 @@
+String matching
+sliding window
+pattern matching
+multi chain matrix
+longest common sub sequence in String
+
+int LCS(Strib=ng s1,String2,int M,int N
+{
+if(M==0|| N==0)
+return 0;
+if(s1[M-1]==s2[N-1]
+return 1+LCS(s1,s2,M-1,N-1)
+return max(LCS(s1,s2,M-1,N),LCS(s1,s2,M,N-1)
+
+00SE
+DFD
+Root--leaf<==left to right
+high coisen low cupling
+1.difference between use case design and DFD
+
+1. ticket booking in SDLC
+
+Planning: In this phase, the project objectives and requirements are defined, and a project plan is created. The feasibility of the project is analyzed, and a decision is made to proceed or not.
+
+Analysis: In this phase, the requirements of the project are gathered, analyzed, and documented. The current system is assessed, and the project team identifies the necessary features and functionalities required for the Ticket Booking System.
+
+Design: In this phase, the project team designs the system's architecture, modules, and components. The user interface and the database design are created, and the overall system design is documented.
+
+Development: In this phase, the project team develops the software using the design documents as a guide. The code is written, compiled, and tested, and the system is built in this phase.
+
+Testing: In this phase, the system is tested to ensure that it meets the requirements and specifications defined in the analysis phase. Different types of testing, such as unit testing, integration testing, and system testing, are conducted.
+
+Deployment: In this phase, the system is deployed to the production environment, and the end-users start using the Ticket Booking System. The system's performance is monitored, and any issues that arise are resolved.
+
+Maintenance: In this phase, the system is maintained, updated, and enhanced based on user feedback and changing business requirements. This phase ensures that the Ticket Booking System remains relevant and useful to CTU's users.
+
+2.How do Agile Process Models satisfy more clients? Explain.
+
+Customer Collaboration: Agile methodologies encourage collaboration and communication between the development team and the customer throughout the project. The customer is involved in the planning, design, and testing phases, and feedback is continuously solicited and incorporated into the software. This allows the customer to have a greater sense of ownership and involvement in the development process, leading to a more satisfied client.
+
+Early and Frequent Delivery: Agile methodologies aim to deliver working software in small, incremental releases, which allows the customer to see progress early on in the project. This early delivery also enables the customer to provide feedback and make changes as necessary, reducing the risk of developing a final product that does not meet the customer's expectations.
+
+Flexibility and Adaptability: Agile methodologies are designed to be flexible and adaptable to changing requirements or circumstances. This allows the development team to quickly respond to changing customer needs or market conditions, ensuring that the final product meets the customer's current needs and is competitive in the market.
+
+Continuous Improvement: Agile methodologies prioritize continuous improvement through regular retrospectives and feedback loops. This approach ensures that the development team is constantly learning and improving, leading to a better final product and a more satisfied customer.
+
+3.library System
+
+
+                +-----------------+
+                |    User         |
+                +-----------------+
+                |  UserId         |
+                |  UserName       |
+                |  Password       |
+                +-----------------+
+                          |
+                          |
+      +-------------------+-------------------+
+      |                   |                   |
++--------------+  +--------------+  +--------------+
+|    Staff     |  |   Student    |  |   Librarian  |
++--------------+  +--------------+  +--------------+
+|  Department  |  |   Class      |  |  Name        |
+|              |  |              |  |  Password    |
++--------------+  +--------------+  +--------------+
+             \            |            /
+              \           |           /
+                 \        |        /
+                  \       |       /
+                +-----------------+
+                |     Book        |
+                +-----------------+
+                |  Title          |
+                |  Author         |
+                |  Publication    |
+                |  BookID         |
+                +-----------------+
+                          |
+                          |
+                 +------------------+
+                 | BookTransaction  |
+                 +------------------+
+                 |  BookID          |
+                 |  UserId          |
+                 |  TransactionType |
+                 |  TransactionDate |
+                 |  DueDate         |
+                 |  ReturnDate      |
+
+                 |  FineAmount      |
+                 +------------------+
+
+4.chalkPad..
+
+
+           +-----------------+
+           |   Super Admin   |
+           +-----------------+
+           | Manage ERP      |
+           +--------+--------+
+                    |
+                    |
+           +--------v--------+
+           |   System User   |
+           +-----------------+
+           | View ERP Data   |
+           | Manage Account  |
+           | Manage Course   |
+           | Manage Schedule |
+           +--------+--------+
+                    |
+                    |
+          +---------v---------+
+          |      Student      |
+          +--------------------+
+          | View Course Info   |
+          | View Schedule      |
+          | Register for Course|
+          | Pay Tuition        |
+          +---------+----------+
+                    |
+                    |
+          +---------v---------+
+          |      Cashier      |
+          +--------------------+
+          | View Account Info  |
+          | Accept Tuition     |
+          | Issue Receipt      |
+          +--------------------+
+
+TESTING=>
+varification (every step)-
+regressinon test-test case same
+
+ fa rgb ball
+Sample Input
+
+RRGRBG
+Sample Output
+
+RRRBGG
+
+class Result {
+  // Return the final string, after re-arranging
+  static String rearrangeBalls(String balls) {
+	// Write your code here
+	Character str[]= new Charecter[ball.length];
+	for(int i=0;i<str.length();i++){
+	  char ch=balls.charAt(i);
+	  str[i]=ch;
+	  
+	}
+	Arrays.sort(str);
+	String res=" ";
+	int k=0;
+	for(int j=str.length()-1;j>=0;j--){
+	  if(str[j]!='R'){
+	    res=res+str(i++);
+	  }
+	  else{
+	    res=res+str[j];
+	  }
+	}
+	return res;
+    
+  }
+}
+
+
+
+//rgb st1
+class Result {
+  static int getIndex(char color) {
+    if (color == 'R') return 0;
+    if (color == 'G') return 1;
+    if (color == 'B') return 2;
+    return -1;
+  }
+
+  static int minSetRGB(String stones) {
+    int n = stones.length();
+    int ans = Integer.MAX_VALUE;
+    int[] cnt = new int[3];
+    int l = 0;
+    for (int r = 0; r < n; ++r) {
+      ++cnt[getIndex(stones.charAt(r))];
+      while (cnt[getIndex(stones.charAt(l))] > 1) {
+        --cnt[getIndex(stones.charAt(l))];
+        ++l;
+      }
+      if (cnt[0] > 0 && cnt[1] > 0 && cnt[2] > 0) {
+        ans = Math.min(ans, r - l + 1);
+      }
+    }
+    return ans == Integer.MAX_VALUE ? -1 : ans;
+  }
+}
+
+
+

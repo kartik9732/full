@@ -1,0 +1,347 @@
+sIaas   =>
+
+Infrastructure as a Service (IaaS) is a business model that delivers IT infrastructure like compute(EC2,ami),
+ storage, and network resources on a pay-as-you-go basis over the internet.
+storage(EBs)
+internet=>elastic ip,with the help of internet
+
+
+
+Paas  =>
+What are the PaaS in AWS?
+Platform as a Service (PaaS)
+
+Platforms as a service remove the need for organizations to manage the underlying infrastructure (usually hardware and operating systems) and allow you to focus on the
+ deployment and management of your applications.
+AWS Elastic Beanstalk.
+
+Saas  =>
+Software as a Service (SaaS) is a cloud-based software model that delivers applications to end-users through 
+an internet browser. SaaS vendors host services and applications for customers to access on-demand.
+What is an example of a SaaS?
+Image result for saas in aws
+The most common types of SaaS solutions are Customer Relationship Management (CRM), 
+Enterprise Resource Planning (ERP), Content Management System (CMS), 
+Project Management Software, Sales, Marketing
+
+
+Elastic IP=> same resiogn;
+1.AWS POOL IP
+2.CUSTOMIZE ELASTIC 
+3.BRING YOUR OWN ELASTIC IP
+LAB=>
+allocate Elastic ip
+diallocate Elastic ip
+release Elastic Ip 
+
+1.status health check
+2.distribute the exiting   load
+3.highly available and reliable
+4.auto scalling
+5.
+
+AUTO Scalling=>
+scale up 			 instance configuration==.instance template==> basic config,+install/set up
+
+auto scalling gouup==> resource scale up,scale down
+
+scale down
+1.vertical(increase the sourse)
+2.horizental(increasing machine configuration)
+
+HIGH AVABILITY=>
+0 down time 
+FOLTONANCE=>
+recovery from any system,network,data, from any  deserter.
+
+LOAD BALANCER=>
+1.status health check
+2.distribute the exiting   load
+echo "Ip address is $(hostname)">/var/www/html/index.html
+
+amazon Glacier=>
+secure,low cost,long term backup
+data Archive
+
+//freaquently not useable but want to maintain always 
+1.instant data retrival(output1-5 min)
+2.flexible(instant use,portion of data in hours 3-5hours)
+3.deep archive data retrival 12 hours
+s3--->container bucket
+glacier--->voult
+
+//deserter ho to backup replica hona chaiye to archive ho jye.
+
+AMAJON RDS=>
+configuration,setup,installization(Aarora,Moria DB,MYSQL ---user);
+scalling,high avability,foltalance
+
+CHANGE security key
+my sql-custom/anywhere
+ssh -custom/anywhere
+
+//AMI=>Launched EC2
+//Glacier/s3
+//Elastic Ip
+
+
+
+AMI ,INSTANCE TEMPLATE ,AUTO SCALLING,ELASTIC IP,LOAD BAALANCER,SECUIRITY GROUP,S3
+					|
+					|
+					=festival season traffic control and sell the physical instance
+
+https://chat.openai.com/
+
+RDS PRACTICLE==>
+
+//master userNAme //*** Admin
+master password
+public access Yes
+secuirity new
+After rds==>
+secuirity 
+ssh-----anywhere
+mysql---anywhere
+
+new instance connect to data base
+
+
+ST1
+access control list
+sns 
+sqs
+kubernates
+1.cloude basic
+ec2
+elastic ip
+cloude services
+ami
+auto scalling
+load balancer
+s3
+glacier
+rds
+EBS
+security
+
+
+//DYNAMODB --(Key value no pre difind schema,high avability,partition) 1.document,2.graph 3.key value,4.columrn No sql total count
+table name/partition key--Employee_ID
+customised
+add item
+add attribute
+expolore item
+creat item to store data;
+query
+partition key
+when id donts know the partition key
+use snan
+attribute filter-batch-value
+specific not full batch special anyone
+
+KEY VALUE=
+1.table(collect of items);
+2.items
+3.attribute
+
+READ operation 					| write operation
+1.eventual consistant.(faster 1-5)	4rcu	|RCU 1kb
+							|
+2.strongly consistant.(costly upto 6)8 rcu|
+RCU
+
+cloude function availability(scalling,)
+through various function
+ability
+data>4 store in s3 bucket and use the link
+
+TYPES of cloude=>
+private clouds, public clouds, hybrid clouds, and community.
+			1.less secuirity			creadential only chitkara internet use it
+			2.cheap
+
+VPC=>(data store te more than one clint data store vpc store perticular clint data)
+virtual privet cloude; logically isolated,geographycally same
+data center of one clint;
+advantages:-
+1.scalability
+cloude-region-avalability zone( in one avalibility zone more avalibility subnet)
+vpc-subnet(connect to internet,within network resourse connect) 
+1 user 5 vpc-2000 subnet
+1 route(subnet) 50 instance,elastic ip=5;
+
+
+VPC CREATE=>
+create vpc-->create subnet-->create internet gateway(action attach to vpc)-->create route table(subnet Association-edit routes)-new instance(ssh-hhtp-https) both instace in window change secuirity group
+192.168.0.0/16 cdir
+
+public -privete
+edit hobe na gateway 0000
+windows launch instance --auto anable disable in privet ip time
+public and privet both are same availability 
+
+NAT-(subnet[public subnet])-allowcate elastic ip
+
+privet route cable-add rule-internetaccess(o.o.0.0) nat gateway
+
+
+creat vpc
+create internet(public /privet)
+create internet gateway
+create route table
+launch ec2(windows) -public enable-rdb-hhtp-https
+privet-disable-RdB -getPassword
+connect
+attach nat in public 
+remote desktop
+-privet ip-coonect-Adminstrator-password
+( vpc 10.0.0.0/16 vpc 10.0.0.0/24 public  privet subnet 10.0.1.0/26 )
+
+
+different vpc
+q1.2 vpc (10.0.0.0/16
+
+//ST_2
+1.DYNAMO DB---5
+2.VPC---10M
+3.NACL--5M
+4.IAM---12M
+5.ROUTE 53--3M
+6.CLOUDEFRONT--5M
+7.DOCKER, CONNECTOR--5M
+
+nacl(provide secuirity)
+ROUTE--53
+what is amazon cloude front
+
+IAM practikal
+===using console
+log in
+add MFA(security)
+group==
+user=request,authenticate,()
+role==				difference(policy,role ak role me bohot policy ak policy bohot user)
+policy==ki ki acess kon type user(json visual,import)
+
+//docker
+container service
+
+sudo su
+=>root
+yum install docker -y
+docker version/docker info
+=>version or installed or not
+service docker status
+=>status check
+service docker start
+docker search nginx
+docker run -it ubuntu /bin/bash(**)
+exit(append in docker engine)
+docker pull(mysql) container name
+docker image (which image contains)
+docker ps-q
+docker p
+sevice docker stop.
+docker container name stop.
+
+//AWS LAMDA
+serverless computing
+128MB-3008MB--lamda memory
++multiple of 64 MB
+lamda function(code)
+IAM Role-permission
+Trigger-condition
+in dynamoDb
+-->insert user in-->S3 bucket
+dynamotable,dynamo table
+access
+practikle==>
+create function
+
+SQS==>pull service
+short polling==>
+long polling==>delay time next pick the task
+SNS==>
+Simple Notification Service
+publisher--Topic--subcription
+2.mobile notification
+3.text
+4.Email
+5.web notifiction
+
+Elastic Beanstalk==>web application manage ,secirity,scale just like git hub
+BACKUP==>
+cloudWatch==>
+directory==>
+cloude do's and don't
+experiment,encourage team, devops culture,encourge all the teams
+==> AWS BEST practice
+
+load balancer
+s3
+vpc
+iam
+auto scalling
+cloude services
+overview,
+cloude do's,don't
+best practice
+
+What are the advantages of using Docker container?
+What Is and What Are the Benefits of Docker Container?
+The benefits of Docker in building and deploying applications are many:
+Caching a cluster of containers.
+Flexible resource sharing.
+Scalability - many containers can be placed in a single host.
+Running your service on hardware that is much cheaper than standard servers.
+
+Portability: Docker containers are lightweight and can run on any platform that supports Docker, making them highly portable.
+
+Consistency: Docker containers ensure consistent deployment environments across development, testing, and production.
+
+Isolation: Docker containers provide an isolated environment for applications, preventing conflicts with other applications or the host system.
+
+Scalability: Docker containers can be easily scaled up or down based on demand, allowing for efficient use of resources.
+
+Ease of management: Docker containers are easy to manage and deploy, reducing the time and effort required for maintenance and updates.
+
+
+ 	On Premises	On Cloud
+1.	Control of user is more.	Control of user is less as third parties are involved.
+2.	Infrastructure is not easy to scale.	Infrastructure is easy to scale.
+3.	Internet connectivity is not need all the time.	Internet is must for the services of the cloud.
+4.	These services run within the enterprise only.	The services of cloud depends on the third parties so these are not only accessed within the enterprise.
+5.	These services are not quite flexible.	The services of cloud are highly flexible.
+6.	Not available on a subscription basis.	Services are available for purchase.
+7.	For hardware and software updates, enterprise is responsible.	For hardware and software updates, third party is responsible.
+8.	Cost is fixed.	Cost is not fixed, as additional services comes with additional charges.
+9.	Data is easily portable.	Data is not easily portable.
+10.	The deployment happens in the local environment.	The deployment happens on the internet.
+11.	Security is more.	Security is less as all the information is stored in the cloud.
+12.	These services are used in large companies.	These services are used in small and mid sized companies.
+13.	Implementation time is more.	Implementation time is less.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
